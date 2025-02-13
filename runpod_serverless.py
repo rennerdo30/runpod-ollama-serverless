@@ -27,6 +27,8 @@ def handler(job):
     
     # Ensure streaming is enabled for Ollama
     payload["stream"] = True
+    payload["options"] = { "num_ctx": 40960 }
+    
 
     # Make the POST request to your local Ollama endpoint
     resp = requests.post(
